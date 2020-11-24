@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_major_account_major,major_account.account_major,model_account_major,,1,1,1,1
+access_account_major_account_level,major_account.account_level,model_account_major_level,,1,1,1,1
+access_account_major_account_template,major_account.account_template,model_account_major_template,,1,1,1,1
+report_account_major_report_major_accounts,report.major_account.report_major_accounts,model_report_major_account_report_major_accounts,,1,1,1,1

@@ -1,0 +1,3 @@
+-
+  !python {model: res.company, id: False}: |
+    self.browse().generate_major_accounts_from_template()

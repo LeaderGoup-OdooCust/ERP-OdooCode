@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="trail_balance_major_account_view" model="ir.ui.view">
+            <field name="name">Trail Balance (Major Accounts)</field>
+            <field name="model">major_account.report</field>
+            <field name="arch" type="xml">
+                <form string="Report Options">
+                    <field name="company_id" invisible="1"/>
+                    <group col="4">
+                        <field name="target_move" widget="radio"/>
+                        <field name="all_accounts" />
+                        <field name="cr_dr_balance"/>
+                        <field name="show_cr_de_opening_balance" attrs="{'invisible': [('cr_dr_balance', '=', False)]}"/>
+
+                        <newline/>
+                        <field name="selected_account" domain="[('company_id', '=', company_id)]" attrs="{'invisible': [('all_accounts', '=', True)],'required':[('all_accounts', '=', False)]}"/>
+                        <newline/>
+
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <newline/>
+                        <field name="show_detail"/>
+                        <field name="report_level" attrs="{'invisible': [('show_detail', '=', True)]}"/>
+                    </group>
+                    <footer>
+                        <button name="check_report" string="Print" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_pdf_trail_balance_account_major" model="ir.actions.act_window">
+            <field name="name">Account Statement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">major_account.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="trail_balance_major_account_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_trail_balance_account_major"
+                  name="Major Accounts"
+                  parent="accounting_pdf_reports.menu_finance_legal_statement"
+                  action="action_pdf_trail_balance_account_major" sequence="100"/>
+    </data>
+</odoo>

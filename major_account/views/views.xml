@@ -1,0 +1,186 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="account_major_list">
+            <field name="name">Major Accounts list</field>
+            <field name="model">account.major</field>
+            <field name="field_parent">child_id</field>
+            <field name="arch" type="xml">
+                <tree toolbar="True" string="Major Accounts">
+                    <field name="complete_name"/>
+                    <field name="description"/>
+                    <field name="is_leaf"/>
+                    <field name="total_credit"/>
+                    <field name="total_debit"/>
+                    <field name="balance"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="account_major_tree" model="ir.ui.view">
+            <field name="name">Major Accounts tree</field>
+            <field name="model">account.major</field>
+            <field name="arch" type="xml">
+                <tree string="Major Accounts">
+                    <field name="complete_code"/>
+                    <field name="description"/>
+                    <field name="is_leaf"/>
+                    <field name="total_credit"/>
+                    <field name="total_debit"/>
+                    <field name="balance"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="account_major_form" model="ir.ui.view">
+            <field name="name">Major Accounts Form</field>
+            <field name="model">account.major</field>
+            <field name="arch" type="xml">
+                <form string="Major Account">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="complete_code" placeholder="Complete Code"/>
+                            </h1>
+                        </div>
+                        <div class="oe_title">
+                            <label for="description"/>
+                            <h1>
+                                <field name="description" placeholder="Account Name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <hr style="border-width: 4px; border-style: double; border-top: 1px solid blue"/>
+                        <group string="Details">
+                            <group>
+                                <field name="name" invisible="1"/>
+                                <field name="parent_id" readonly="1"/>
+                                <field name="company_id"/>
+                                <field name="level"/>
+                            </group>
+                            <group>
+                                <field name="is_leaf" readonly="1"/>
+                                <field name="notes"/>
+                            </group>
+                        </group>
+                        <hr style="border-width: 4px; border-style: double; border-top: 1px solid blue"/>
+                        <group string="Balances" col="6" colspan="6">
+                            <field name="balance_start_date"/>
+                            <field name="balance_date"/>
+                            <field name="balance_type"/>
+                            <newline/>
+                            <field name="total_credit"/>
+                            <field name="total_debit"/>
+                            <field name="balance"/>
+                        </group>
+                        <hr style="border-width: 4px; border-style: double; border-top: 1px solid blue"/>
+                        <group string="Child Major Accounts" attrs="{'invisible': [('is_leaf', '=', True)]}">
+                            <field name="child_ids" nolabel="1" readonly="1">
+                                <tree>
+                                    <field name="complete_name"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group string="Accounts" attrs="{'invisible': [('is_leaf', '=', False)]}">
+                            <field name="accounts" nolabel="1">
+                                <tree>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="user_type_id"/>
+                                    <field name="currency_id" options="{'no_create': True}"
+                                           groups="base.group_multi_currency"/>
+                                    <field name="company_id" options="{'no_create': True}"
+                                           groups="base.group_multi_company"/>
+                                    <field name="balance" />
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Inheritance for Readonly-->
+        <record id="account_major_readonly_form" model="ir.ui.view">
+            <field name="name">Major Accounts Form</field>
+            <field name="model">account.major</field>
+            <field name="inherit_id" ref="account_major_form"/>
+            <field name="groups_id" eval="[(6, 0,[ref('account.group_account_manager')])]"/>
+            <field name="arch" type="xml">
+                <field name="description" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+                <field name="parent_id" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+                <field name="is_leaf" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+            </field>
+        </record>
+
+        <!-- filter -->
+        <record id="account_major_filter" model="ir.ui.view">
+            <field name="name">account.major.filter</field>
+            <field name="model">account.major</field>
+            <field name="arch" type="xml">
+                <search string="Major Accounts">
+                    <field name="description"/>
+                    <field name="complete_code"/>
+                    <field name="parent_id"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_update_major_account_code" model="ir.actions.server">
+            <field name="name">Update Major Account Code</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_major"/>
+            <field name="binding_model_id" ref="model_account_major"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.update_accounts_multi()
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="major_account.action_window">
+            <field name="name">Major Accounts Window</field>
+            <field name="res_model">account.major</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="account_major_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new Major Account.
+                </p>
+            </field>
+        </record>
+
+        <!--        <record id="list_action_window" model="ir.actions.act_window">-->
+        <!--        <field name="name">Major Accounts Hierarchy</field>-->
+        <!--        <field name="type">ir.actions.act_window</field>-->
+        <!--        <field name="res_model">major.account</field>-->
+        <!--        <field name="domain">[('parent_id', '=', False)]</field>-->
+        <!--        <field name="view_type">tree</field>-->
+        <!--        <field name="view_id" ref="list"/>-->
+        <!--        <field name="help" type="html">-->
+        <!--        <p class="oe_view_nocontent_create">-->
+        <!--        Here is a list of all major accounts.-->
+        <!--        </p>-->
+        <!--        </field>-->
+        <!--        </record>-->
+
+
+        <!-- menu categories -->
+        <menuitem name="Major Accounts" id="major_account.menu_account_major"
+                  parent="account.menu_finance_entries"
+                  action="major_account.action_window" sequence="30"/>
+        <!--        <menuitem name="Major Accounts Hierarchy" id="menu_account_major_hierarchy"-->
+        <!--        parent="account.menu_finance_entries"-->
+        <!--        action="list_action_window" sequence="35"/>-->
+
+
+    </data>
+</odoo>

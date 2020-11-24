@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                string="Major Accounts"
+                id="action_report_major_account"
+                model="account.major"
+                report_type="qweb-pdf"
+                name="major_account.report_major_accounts"
+                file="major_account.report_major_accounts_template"
+        />
+        <report
+                string="Major Accounts Opening Balance"
+                id="action_report_major_account_open_balance"
+                model="account_major.account_major"
+                report_type="qweb-pdf"
+                name="account_major.report_show_opening_balance"
+                file="account_major.report_show_opening_balance"
+        />
+    </data>
+</odoo>

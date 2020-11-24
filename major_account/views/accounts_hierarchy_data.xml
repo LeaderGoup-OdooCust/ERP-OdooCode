@@ -1,0 +1,714 @@
+<odoo>
+    <data noupdate="1">
+        <record id='account_template_1' model='account.major'>
+            <field name='description'>الأصول</field>
+            <field name='name'>1</field>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_2' model='account.major'>
+            <field name='description'>الأصول الثابتة</field>
+            <field name='name'>01</field>
+            <field name='parent_id' ref='account_template_1'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_3' model='account.major'>
+            <field name='description'>الأراضي</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_2'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_4' model='account.major'>
+            <field name='description'>المباني</field>
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_2'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_5' model='account.major'>
+            <field name='description'>الأثاثات</field>
+            <field name='name'>003</field>
+            <field name='parent_id' ref='account_template_2'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_6' model='account.major'>
+            <field name='description'>السيارات والمركبات</field>
+            <field name='name'>004</field>
+            <field name='parent_id' ref='account_template_2'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_7' model='account.major'>
+            <field name='description'>الآليات والمعدات</field>
+            <field name='name'>005</field>
+            <field name='parent_id' ref='account_template_2'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_8' model='account.major'>
+            <field name='description'>مصروفات التأسيس</field>
+            <field name='name'>006</field>
+            <field name='parent_id' ref='account_template_2'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_9' model='account.major'>
+            <field name='description'>بدل الاستهلاك</field>
+            <field name='name'>007</field>
+            <field name='parent_id' ref='account_template_2'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_10' model='account.major'>
+            <field name='description'>إستثمارات</field>
+            <field name='name'>02</field>
+            <field name='parent_id' ref='account_template_1'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_11' model='account.major'>
+            <field name='description'>إستثمارات قصيرة المدى</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_10'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_12' model='account.major'>
+            <field name='description'>إستثمارات طويلة المدى</field>
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_10'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_13' model='account.major'>
+            <field name='description'>الاصول المتداولة</field>
+            <field name='name'>03</field>
+            <field name='parent_id' ref='account_template_1'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_14' model='account.major'>
+            <field name='description'>النقد</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_1114' model='account.major'>
+            <field name='description'>الخزنة</field>
+            <field name='name'>111</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_15' model='account.major'>
+            <field name='description'>البنوك</field>
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_16' model='account.major'>
+            <field name='description'>الشيكات تحت التحصيل</field>
+            <field name='name'>003</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_17' model='account.major'>
+            <field name='description'>المخزن</field>
+            <field name='name'>004</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_18' model='account.major'>
+            <field name='description'>تقييم المخزون</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_17'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_19' model='account.major'>
+            <field name='description'>إدخال المخزون</field>
+            <!-- <field name='description'>Inventory Input</field> -->
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_17'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_20' model='account.major'>
+            <field name='description'>الناتج المخزون</field>
+            <!-- <field name='description'>Inventory Output</field> -->
+            <field name='name'>003</field>
+            <field name='parent_id' ref='account_template_17'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_21' model='account.major'>
+            <field name='description'>حسابات مستحقة</field>
+            <field name='name'>005</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_22' model='account.major'>
+            <field name='description'>نفقات المدفوعة مسبقا</field>
+            <field name='name'>006</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_23' model='account.major'>
+            <field name='description'>القروض</field>
+            <field name='name'>007</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_24' model='account.major'>
+            <field name='description'>قروض الموظفين</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_23'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_25' model='account.major'>
+            <field name='description'>العهد</field>
+            <field name='name'>008</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_26' model='account.major'>
+            <field name='description'>بضائع بالطريق</field>
+            <!-- <field name='description'>Goods by Road</field> -->
+            <field name='name'>009</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_27' model='account.major'>
+            <field name='description'>مدينون آخرون</field>
+            <field name='name'>010</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_28' model='account.major'>
+            <field name='description'>خطاب اعتماد</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_27'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_30' model='account.major'>
+            <field name='description'>حساب نقل وسيط</field>
+            <field name='name'>012</field>
+            <field name='parent_id' ref='account_template_13'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_31' model='account.major'>
+            <field name='description'>الخصوم</field>
+            <field name='name'>2</field>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_32' model='account.major'>
+            <field name='description'>الخصوم المتداولة</field>
+            <field name='name'>01</field>
+            <field name='parent_id' ref='account_template_31'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_33' model='account.major'>
+            <field name='description'>الدائنين</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_32'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_34' model='account.major'>
+            <field name='description'>الشيكات المرتدة</field>
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_32'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_35' model='account.major'>
+            <field name='description'>المصروفات المستحقة</field>
+            <field name='name'>003</field>
+            <field name='parent_id' ref='account_template_32'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_36' model='account.major'>
+            <field name='description'>إيرادات مستلمة مقدماً</field>
+            <field name='name'>004</field>
+            <field name='parent_id' ref='account_template_32'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_37' model='account.major'>
+            <field name='description'>الضمانات</field>
+            <field name='name'>005</field>
+            <field name='parent_id' ref='account_template_32'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_38' model='account.major'>
+            <field name='description'>دائنين آخرين</field>
+            <field name='name'>006</field>
+            <field name='parent_id' ref='account_template_32'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_39' model='account.major'>
+            <field name='description'>ضريبة القيمة المضافة</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_38'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_45' model='account.major'>
+            <field name='description'>حسابات دائنة</field>
+            <field name='name'>008</field>
+            <field name='parent_id' ref='account_template_32'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_46' model='account.major'>
+            <field name='description'>الخصوم غير المتداولة</field>
+            <field name='name'>02</field>
+            <field name='parent_id' ref='account_template_31'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_47' model='account.major'>
+            <field name='description'>تمويل طويل الأجل</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_46'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_48' model='account.major'>
+            <field name='description'>تمويل قصير الأجل</field>
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_46'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_49' model='account.major'>
+            <field name='description'>رأس المال</field>
+            <field name='name'>03</field>
+            <field name='parent_id' ref='account_template_31'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_50' model='account.major'>
+            <field name='description'>حساب الربح والخسارة</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_49'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_51' model='account.major'>
+            <field name='description'>الأرباح خاضعة للتوزيع</field>
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_49'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_52' model='account.major'>
+            <field name='description'>الأرباح المحتجزة</field>
+            <field name='name'>003</field>
+            <field name='parent_id' ref='account_template_49'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_53' model='account.major'>
+            <field name='description'>الاحتياطيات</field>
+            <field name='name'>004</field>
+            <field name='parent_id' ref='account_template_49'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_54' model='account.major'>
+            <field name='description'>حسابات الشركاء الجارية</field>
+            <field name='name'>005</field>
+            <field name='parent_id' ref='account_template_49'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_55' model='account.major'>
+            <field name='description'>رأس المال المشترك</field>
+            <field name='name'>006</field>
+            <field name='parent_id' ref='account_template_49'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_56' model='account.major'>
+            <field name='description'>الإيرادات</field>
+            <field name='name'>3</field>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_57' model='account.major'>
+            <field name='description'>إيرادات النشاط</field>
+            <field name='name'>01</field>
+            <field name='parent_id' ref='account_template_56'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_58' model='account.major'>
+            <field name='description'>إيرادات أخرى</field>
+            <field name='name'>02</field>
+            <field name='parent_id' ref='account_template_56'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_59' model='account.major'>
+            <field name='description'>دخل فرق سعر الصرف</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_58'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_60' model='account.major'>
+            <field name='description'>تعويضات</field>
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_58'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_61' model='account.major'>
+            <field name='description'>المصروفات</field>
+            <field name='name'>4</field>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_62' model='account.major'>
+            <field name='description'>مصروفات التشغيل</field>
+            <field name='name'>01</field>
+            <field name='parent_id' ref='account_template_61'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_63' model='account.major'>
+            <field name='description'>الرواتب والأجور</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_64' model='account.major'>
+            <field name='description'>الراتب الأساسي</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_63'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_65' model='account.major'>
+            <field name='description'>غلاء المعيشة</field>
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_63'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_66' model='account.major'>
+            <field name='description'>بدل السكن</field>
+            <field name='name'>003</field>
+            <field name='parent_id' ref='account_template_63'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_67' model='account.major'>
+            <field name='description'>بدل اللبس</field>
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_68' model='account.major'>
+            <field name='description'>مصاريف الإجازات السنوية</field>
+            <field name='name'>003</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_69' model='account.major'>
+            <field name='description'>منحة العيد</field>
+            <field name='name'>004</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_70' model='account.major'>
+            <field name='description'>تذاكر السفر</field>
+            <field name='name'>005</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_71' model='account.major'>
+            <field name='description'>دعم الطلاب</field>
+            <field name='name'>006</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_72' model='account.major'>
+            <field name='description'>التأمين الإجتماعي</field>
+            <field name='name'>007</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_73' model='account.major'>
+            <field name='description'>مصاريف العلاج</field>
+            <field name='name'>008</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_74' model='account.major'>
+            <field name='description'>الحوافز</field>
+            <field name='name'>009</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_75' model='account.major'>
+            <field name='description'>مكافأت أعضاء مجلس الإدارة</field>
+            <field name='name'>010</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_76' model='account.major'>
+            <field name='description'>تكلفة البضائع</field>
+            <field name='name'>011</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_77' model='account.major'>
+            <field name='description'>خسارة فرق سعر الصرف</field>
+            <field name='name'>012</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_78' model='account.major'>
+            <field name='description'>خسارة فرق السعر</field>
+            <field name='name'>013</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_79' model='account.major'>
+            <field name='description'>مصروفات المواد</field>
+            <field name='name'>014</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_80' model='account.major'>
+            <field name='description'>مصاريف البيع</field>
+            <field name='name'>015</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_81' model='account.major'>
+            <field name='description'>مصروفات تشغيلية أخرى</field>
+            <field name='name'>016</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_82' model='account.major'>
+            <field name='description'>مصروفات الصادر</field>
+            <field name='name'>017</field>
+            <field name='parent_id' ref='account_template_62'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_83' model='account.major'>
+            <field name='description'>مصروفات عامة</field>
+            <field name='name'>02</field>
+            <field name='parent_id' ref='account_template_61'/>
+            <field name='is_leaf' eval='False'/>
+        </record>
+        <record id='account_template_84' model='account.major'>
+            <field name='description'>الأجور والرواتب</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_85' model='account.major'>
+            <field name='description'>المرتب الأساسي</field>
+            <field name='name'>001</field>
+            <field name='parent_id' ref='account_template_84'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_86' model='account.major'>
+            <field name='description'>غلاء المعيشة</field>
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_84'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_87' model='account.major'>
+            <field name='description'>بدل السكن</field>
+            <field name='name'>003</field>
+            <field name='parent_id' ref='account_template_84'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_88' model='account.major'>
+            <field name='description'>بدل اللبس</field>
+            <field name='name'>002</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_89' model='account.major'>
+            <field name='description'>مصروفات الإجازات السنوية</field>
+            <field name='name'>003</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_90' model='account.major'>
+            <field name='description'>منحة العيد</field>
+            <field name='name'>004</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_91' model='account.major'>
+            <field name='description'>تذاكر السفر</field>
+            <field name='name'>005</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_92' model='account.major'>
+            <field name='description'>دعم الطلاب</field>
+            <field name='name'>006</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_93' model='account.major'>
+            <field name='description'>التأمين الإجتماعي</field>
+            <field name='name'>007</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_94' model='account.major'>
+            <field name='description'>مصروفات العلاج</field>
+            <field name='name'>008</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_95' model='account.major'>
+            <field name='description'>الحوافز</field>
+            <field name='name'>009</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_96' model='account.major'>
+            <field name='description'>مكافأت أعضاء مجلس الإدارة</field>
+            <field name='name'>010</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_97' model='account.major'>
+            <field name='description'>صيانة الأصول</field>
+            <field name='name'>011</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_98' model='account.major'>
+            <field name='description'>صيانات المركبات</field>
+            <field name='name'>012</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_99' model='account.major'>
+            <field name='description'>صيانة الآلات والمعدات</field>
+            <field name='name'>013</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_100' model='account.major'>
+            <field name='description'>صيانات المولدات</field>
+            <field name='name'>014</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_101' model='account.major'>
+            <field name='description'>صيانات الأثاثات</field>
+            <field name='name'>015</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_102' model='account.major'>
+            <field name='description'>صيانات المباني</field>
+            <field name='name'>016</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_103' model='account.major'>
+            <field name='description'>رسوم التدقيق</field>
+            <field name='name'>017</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_104' model='account.major'>
+            <field name='description'>مصروفات الضيافة</field>
+            <field name='name'>018</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_105' model='account.major'>
+            <field name='description'>نفقات السفر</field>
+            <field name='name'>019</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_106' model='account.major'>
+            <field name='description'>الرسوم المصرفية</field>
+            <field name='name'>020</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_107' model='account.major'>
+            <field name='description'>العمل الإضافي المدفوع</field>
+            <field name='name'>021</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_108' model='account.major'>
+            <field name='description'>وقود</field>
+            <field name='name'>022</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_109' model='account.major'>
+            <field name='description'>القرطاسية والأدوات المكتبية</field>
+            <field name='name'>023</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_110' model='account.major'>
+            <field name='description'>مصروفات أخرى</field>
+            <field name='name'>025</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_111' model='account.major'>
+            <field name='description'>إيجار السيارات</field>
+            <field name='name'>026</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_112' model='account.major'>
+            <field name='description'>الرسوم القانونية</field>
+            <field name='name'>027</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_113' model='account.major'>
+            <field name='description'>مصروفات الإتصالات</field>
+            <field name='name'>028</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_114' model='account.major'>
+            <field name='description'>مصروفات التدريب</field>
+            <field name='name'>029</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_115' model='account.major'>
+            <field name='description'>مصروفات النظافة</field>
+            <field name='name'>030</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_116' model='account.major'>
+            <field name='description'>رسوم حكومية</field>
+            <field name='name'>031</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_117' model='account.major'>
+            <field name='description'>صيانات السيارات</field>
+            <field name='name'>032</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_118' model='account.major'>
+            <field name='description'>أدوات ومعدات نظافة</field>
+            <field name='name'>033</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_119' model='account.major'>
+            <field name='description'>رسوم المواصلات</field>
+            <field name='name'>034</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_120' model='account.major'>
+            <field name='description'>مصروفات الفنادق</field>
+            <field name='name'>035</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_121' model='account.major'>
+            <field name='description'>مصروفات المياه، الكهرباء والنفايات</field>
+            <field name='name'>036</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_122' model='account.major'>
+            <field name='description'>منح</field>
+            <field name='name'>037</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+        <record id='account_template_123' model='account.major'>
+            <field name='description'>مصاريف الحراسة</field>
+            <field name='name'>038</field>
+            <field name='parent_id' ref='account_template_83'/>
+            <field name='is_leaf' eval='True'/>
+        </record>
+
+        <!--<record id="call_generate_major_account_fucntion" model="res.company">-->
+        <!--</record>-->
+    </data>
+</odoo>

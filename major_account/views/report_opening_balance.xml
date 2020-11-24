@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_show_opening_balance">
+            <t t-call="web.html_container">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <h2><span t-esc="res_company.name"/>: Trail Balance (<strong>Opening Balance</strong>)
+
+                    </h2>
+                    <h3>From:
+                        <span t-esc="balance_start_date"/>
+                        To:
+                        <span t-esc="balance_date"/>
+                        for
+                        <u>
+                            <span t-esc="type"/>
+                        </u>
+                        Transactions
+                    </h3>
+                    <h4>For:
+                        <u>
+                            <span t-esc="disp_acc_name"/>
+                        </u>
+                        , Up to:
+                        <u>
+                            <span t-esc="level_name"/>
+                        </u>
+                    </h4>
+                    <t t-set="total_open_cr_balance" t-value="0.00"/>
+                    <t t-set="total_open_dr_balance" t-value="0.00"/>
+                    <t t-set="total_cr" t-value="0.00"/>
+                    <t t-set="total_dr" t-value="0.00"/>
+                    <t t-set="total_close_cr_balance" t-value="0.00"/>
+                    <t t-set="total_close_dr_balance" t-value="0.00"/>
+
+                    <table class="table table-bordered"  boarder="1"
+                           style="border: 1px solid black;border-collapse: collapse;">
+                        <thead style="background-color: Gray">
+                            <tr>
+
+                                <th>
+                                    <strong>Account Code</strong>
+                                </th>
+                                <th>
+                                    <strong>Name</strong>
+                                </th>
+
+                                <th>
+                                    <strong>Opening Balance Cr</strong>
+                                </th>
+
+
+                                <th>
+                                    <strong>Opening Balance Dr</strong>
+                                </th>
+
+
+                                <th>
+                                    <strong>Total Credit</strong>
+                                </th>
+                                <th>
+                                    <strong>Total Debit</strong>
+                                </th>
+
+                                <th>
+                                    <strong>Closeing Cr</strong>
+                                </th>
+                                <th>
+                                    <strong>Closeing Dr</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <span t-foreach="docs" t-as="o">
+                                <tr>
+                                    <td>
+                                        <span t-esc="o.complete_code"/>
+
+                                    </td>
+                                    <td>
+                                        <span t-esc="o.description"/>
+
+                                    </td>
+
+                                    <t t-if="get_open_balance(o, balance_start_date) &gt;= 0">
+
+                                        <td >
+                                            <t t-esc="0.0"  t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="get_open_balance(o, balance_start_date)" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}' />
+
+                                        </td>
+                                    </t>
+                                    <t t-if="get_open_balance(o, balance_start_date) &lt; 0">
+                                        <td>
+                                            <t t-esc="-1 * get_open_balance(o, balance_start_date)" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}' />
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="0.0"  t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+
+                                        </td>
+                                    </t>
+
+                                    <td>
+                                        <t t-esc="get_total_credit(o,balance_start_date,balance_date)" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'
+                                        />
+                                    </td>
+
+                                    <td>
+                                        <t t-esc="get_total_debit(o,balance_start_date,balance_date)" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </td>
+                                    <t t-if="get_balance(o,balance_date) &gt;= 0">
+                                        <td>
+                                            <t t-esc="0.0" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="get_balance(o,balance_date)" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+
+                                        </td>
+                                    </t>
+                                    <t t-if="get_balance(o,balance_date) &lt; 0">
+                                        <td>
+                                            <t t-esc="-1*get_balance(o,balance_date)" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="0.0" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </td></t>
+
+                                </tr>
+                                <div t-if="o.accounts and show_detail">
+                                    <tr style="background-color: #9494b8;">
+                                        <td colspan="3" >
+                                            <strong>Account Code </strong>
+                                        </td>
+                                        <td colspan="3" >
+                                            <strong>Name</strong>
+                                        </td>
+                                        <td colspan="2" >
+                                            <strong>Balance</strong>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="o.accounts" t-as="ac" style="background-color: #CFCFDF;">
+                                        <td colspan="3">
+                                            <span t-esc="ac.code"/>
+                                        </td>
+                                        <td colspan="3">
+                                            <span t-esc="ac.name"/>
+                                        </td>
+                                        <td colspan="2">
+                                            <span t-esc="ac.balance" t-esc-options='{"widget": "monetary", "display_currency": "ac.company_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                </div>
+
+                                <t t-set="get_balance_value" t-value="get_open_balance(o, balance_start_date)"/>
+                                <t t-if="get_balance_value &lt; 0">
+                                    <t t-set="get_positive_value"  t-value="get_balance_value * -1"/>
+
+                                    <t t-set="total_open_cr_balance" t-value="get_positive_value + total_open_cr_balance"/>
+                                </t>
+                                <t t-if="get_balance_value &gt;= 0">
+                                    <t t-set="total_open_dr_balance" t-value="get_balance_value + total_open_dr_balance"/>
+                                </t>
+
+
+
+                                <t t-set="get_total_cr_value" t-value="get_total_credit(o,balance_start_date,balance_date)"/>
+                                <t t-set="total_cr" t-value="get_total_cr_value + total_cr"/>
+
+
+                                <t t-set="get_total_dr_value" t-value="get_total_debit(o,balance_start_date,balance_date)"/>
+                                <t t-set="total_dr" t-value="get_total_dr_value + total_dr"/>
+
+
+                                <t t-set="get_total_close_balance_value" t-value="get_balance(o,balance_date)"/>
+                                <t t-if="get_total_close_balance_value  &lt; 0">
+                                    <t t-set="get_close_positive_value"  t-value="get_total_close_balance_value * -1"/>
+                                    <t t-set="total_close_cr_balance" t-value="get_close_positive_value + total_close_cr_balance "/>
+                                </t>
+                                <t t-if="get_total_close_balance_value  &gt;= 0">
+                                    <t t-set="total_close_dr_balance" t-value="get_total_close_balance_value + total_close_dr_balance "/>
+                                </t>
+
+                            </span>
+                            <tr style="background-color: #8c8c8c;">
+                                <td colspan="2">
+                                    <strong>Total</strong>
+                                </td>
+
+                                <td>
+                                    <t t-esc="total_open_cr_balance" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+
+                                </td>
+
+                                <td>
+                                    <t t-esc="total_open_dr_balance" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+
+                                </td>
+
+                                <td>
+                                    <t t-esc="total_cr" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                                <td>
+                                    <t t-esc="total_dr" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                                <td>
+                                    <t t-esc="total_close_cr_balance" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                                <td>
+                                    <t t-esc="total_close_dr_balance"  t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

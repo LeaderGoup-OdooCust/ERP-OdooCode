@@ -1,0 +1,582 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* major_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-09 18:02+0000\n"
+"PO-Revision-Date: 2018-02-09 18:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid ", Up to:"
+msgstr "فوق"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+msgid ": Trail Balance (<strong>Major Accounts</strong>)"
+msgstr "ميزان المراجعة (<strong>الحسابات الرئيسية</strong>)"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid ": Trail Balance (<strong>Opening Balance</strong>)"
+msgstr ": ميزان المراجعة (<strong>الرصيد الافتتاحي</strong>)"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "<strong>Account Code </strong>"
+msgstr "<strong>كود الحساب</strong>"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "<strong>Account Code</strong>"
+msgstr "<strong>كود الحساب</strong>"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "<strong>Balance</strong>"
+msgstr "<strong>الرصيد</strong>"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "<strong>Closeing Cr</strong>"
+msgstr "<strong>اغلاق الدائنون</strong>"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "<strong>Closeing Dr</strong>"
+msgstr "<strong>اغلاق المدينون</strong>"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+msgid "<strong>Debit Balance</strong>"
+msgstr "<strong>رصيد المدين</strong>"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "<strong>Name</strong>"
+msgstr "<strong>اسم</strong>"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "<strong>Opening Balance Cr</strong>"
+msgstr "<strong>افتتاح رصيد الدائن</strong>"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "<strong>Opening Balance Dr</strong>"
+msgstr "<strong>افتتاح رصيد المدين</strong>"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "<strong>Total Credit</strong>"
+msgstr "<strong>مجموع الدائنون</strong>"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "<strong>Total Debit</strong>"
+msgstr "<strong>مجموع المدينون</strong>"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "<strong>Total</strong>"
+msgstr "<strong>الإجمالي</strong>"
+
+#. module: major_account
+#: model:ir.model,name:major_account.model_account_account
+msgid "Account"
+msgstr "حساب"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_complete_name
+msgid "Account Full Name"
+msgstr "اسم الحساب بالكامل"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_description
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_description
+#: model:ir.ui.view,arch_db:major_account.account_major_form
+msgid "Account Name"
+msgstr "اسم الحساب"
+
+#. module: major_account
+#: model:ir.actions.act_window,name:major_account.action_pdf_trail_balance_account_major
+msgid "Account Statement"
+msgstr "بيان حساب"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_accounts
+#: model:ir.ui.view,arch_db:major_account.account_major_form
+msgid "Accounts"
+msgstr "الحسابات"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_all_accounts
+msgid "All Major Accounts"
+msgstr "كل الحسابات الرئيسية"
+
+#. module: major_account
+#: selection:account.major,balance_type:0
+msgid "All Transactions"
+msgstr "كل العمليات"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_account_balance
+#: model:ir.model.fields,field_description:major_account.field_account_major_balance
+msgid "Balance"
+msgstr "الرصيد"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_balance_start_date
+msgid "Balance From"
+msgstr "الرصيد من"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_balance_date
+msgid "Balance as on"
+msgstr "الرصيد الى"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.account_major_form
+msgid "Balances"
+msgstr "الارصدة"
+
+#. module: major_account
+#: code:addons/major_account/models/account.py:178
+#, python-format
+msgid "Can't link account to non-leaf major account!!"
+msgstr "لا يمكن حذف حساب غير طرفي في الحسابات الرئيسية"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.trail_balance_major_account_view
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_res_company_account_code_length
+msgid "Chart of Account Code Length"
+msgstr "طول الكود في شجرة الحسابات"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_child_ids
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_child_ids
+msgid "Child Account"
+msgstr "الحسابات الفرعية"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.account_major_form
+msgid "Child Major Accounts"
+msgstr "فروع الحسابات الرئيسية"
+
+#. module: major_account
+#: model:ir.actions.act_window,help:major_account.action_window
+msgid "Click to create a new Major Account."
+msgstr "اضغط لاضافة حساب رئيسي"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_name
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_name
+msgid "Code"
+msgstr "الكود"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_level_code_length
+msgid "Code Length"
+msgstr "طول الكود"
+
+#. module: major_account
+#: model:ir.model,name:major_account.model_res_company
+msgid "Companies"
+msgstr "المؤسسات"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_company_id
+#: model:ir.model.fields,field_description:major_account.field_account_major_level_company_id
+msgid "Company"
+msgstr "المؤسسة"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.account_major_form
+msgid "Complete Code"
+msgstr "الكود بالكامل"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_create_uid
+#: model:ir.model.fields,field_description:major_account.field_account_major_level_create_uid
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_create_uid
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_create_date
+#: model:ir.model.fields,field_description:major_account.field_account_major_level_create_date
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_create_date
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_create_date
+msgid "Created on"
+msgstr "أنشئ بتاريخ"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+msgid "Credit"
+msgstr "الدائن"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_credit_balance
+msgid "Credit Balance"
+msgstr "رصيد الداين"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_cr_dr_balance
+msgid "Credit/Debit Balance"
+msgstr "رصيد الدائن/المدين"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_debit_balance
+msgid "Debit Balance"
+msgstr "رصيد المدين"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.account_major_form
+msgid "Details"
+msgstr "التفاصيل"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_display_name
+#: model:ir.model.fields,field_description:major_account.field_account_major_level_display_name
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_display_name
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_display_name
+#: model:ir.model.fields,field_description:major_account.field_report_major_account_report_major_accounts_display_name
+#: model:ir.model.fields,field_description:major_account.field_report_major_account_report_show_opening_balance_display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_date_to
+msgid "End Date"
+msgstr "تاريخ الإنتهاء"
+
+#. module: major_account
+#: constraint:account.major:0
+msgid "Error ! You cannot create recursive account."
+msgstr "خطاء ! لا يمكن انشاء حساب متكرر"
+
+#. module: major_account
+#: code:addons/major_account/models/models.py:278
+#, python-format
+msgid "Error !This Major Account Has Children You Can Not Change To Leaf"
+msgstr "خطاء ! الحساب الرئيسي يحتوي على حسابات فرعية لذا لا يمكن تغير الحساب الطرفي"
+
+#. module: major_account
+#: code:addons/major_account/models/models.py:274
+#, python-format
+msgid "Error !This Major Account has An Accounts Remove it First Or Switch To Other major Account"
+msgstr "خطاء ! هذا الحساب الرئيسي  يحتوي على حسابات اخرى الرجاء حذفها اولا او تغيرها بحسابات اخرى"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "For:"
+msgstr "ل"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "From:"
+msgstr "من"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_complete_code
+msgid "Full Code"
+msgstr "الكود بالكامل"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.view_account_major_account_settings_form
+msgid "Generate Levels"
+msgstr "توليد مستويات"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.view_account_major_account_settings_form
+msgid "Generate Major Accounts"
+msgstr "توليد حسابات رئيسية"
+
+#. module: major_account
+#: model:ir.model.fields,help:major_account.field_account_major_sequence
+msgid "Gives the sequence order when majoring a list of accounts."
+msgstr "Gives the sequence order when majoring a list of accounts."
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_id
+#: model:ir.model.fields,field_description:major_account.field_account_major_level_id
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_id
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_id
+#: model:ir.model.fields,field_description:major_account.field_report_major_account_report_major_accounts_id
+#: model:ir.model.fields,field_description:major_account.field_report_major_account_report_show_opening_balance_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_is_leaf
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_is_leaf
+msgid "Is Leaf"
+msgstr "حساب طرفي"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major___last_update
+#: model:ir.model.fields,field_description:major_account.field_account_major_level___last_update
+#: model:ir.model.fields,field_description:major_account.field_account_major_template___last_update
+#: model:ir.model.fields,field_description:major_account.field_major_account_report___last_update
+#: model:ir.model.fields,field_description:major_account.field_report_major_account_report_major_accounts___last_update
+#: model:ir.model.fields,field_description:major_account.field_report_major_account_report_show_opening_balance___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل بتاريخ"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_level_write_uid
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_write_uid
+#: model:ir.model.fields,field_description:major_account.field_account_major_write_uid
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_level_write_date
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_write_date
+#: model:ir.model.fields,field_description:major_account.field_account_major_write_date
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث بتاريخ"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_parent_left
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_parent_left
+msgid "Left Parent"
+msgstr "الوالد الايسر"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_level
+#: model:ir.model.fields,field_description:major_account.field_account_major_level_level
+msgid "Level"
+msgstr "مستوى"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_level_name
+msgid "Level Name"
+msgstr "اسم المستوى"
+
+#. module: major_account
+#: code:addons/major_account/models/models.py:383
+#: code:addons/major_account/models/models.py:402
+#, python-format
+msgid "Level of this account is greater than the maximum allowed level!!"
+msgstr "مستوى هذا الحساب اكبر من اعلى مستوى مسموح به"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_account_major_account_id
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_selected_account
+#: model:ir.ui.view,arch_db:major_account.account_major_form
+msgid "Major Account"
+msgstr "الحساب الرئيسي"
+
+#. module: major_account
+#: model:ir.actions.report.xml,name:major_account.action_report_major_account
+#: model:ir.model.fields,field_description:major_account.field_res_company_major_accounts
+#: model:ir.ui.menu,name:major_account.menu_account_major
+#: model:ir.ui.menu,name:major_account.menu_trail_balance_account_major
+#: model:ir.ui.view,arch_db:major_account.account_major_filter
+#: model:ir.ui.view,arch_db:major_account.account_major_list
+#: model:ir.ui.view,arch_db:major_account.account_major_tree
+#: model:ir.ui.view,arch_db:major_account.view_account_major_account_search
+#: model:ir.ui.view,arch_db:major_account.view_account_major_account_settings_form
+msgid "Major Accounts"
+msgstr "الحسابات الرئيسية"
+
+#. module: major_account
+#: model:ir.actions.act_window,name:major_account.action_window
+msgid "Major Accounts Window"
+msgstr "نافذة الحسابات الرئيسية"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_res_company_major_accounts_levels
+msgid "No of Max level"
+msgstr "اقصى عدد للمستوى"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_notes
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_parent_id
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_parent_id
+msgid "Parent Account"
+msgstr "الحساب الاصلي"
+
+#. module: major_account
+#: code:addons/major_account/models/company.py:48
+#, python-format
+msgid "Please Generate levels and setup code length for each level first!!"
+msgstr "من فضلك انشئ مستويات واضف لاي مستوى الكود الخاص به"
+
+#. module: major_account
+#: code:addons/major_account/models/company.py:21
+#, python-format
+msgid "Please select no of Max level!"
+msgstr "من فضلك اختار اقصى عدد للمستويات"
+
+#. module: major_account
+#: selection:account.major,balance_type:0
+msgid "Posted"
+msgstr "مرحلة"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_res_company_major_account_prefix
+msgid "Prefix"
+msgstr "البادئة"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.trail_balance_major_account_view
+msgid "Print"
+msgstr "طباعة"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.trail_balance_major_account_view
+msgid "Report Options"
+msgstr "خيارات التقرير"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_parent_right
+#: model:ir.model.fields,field_description:major_account.field_account_major_template_parent_right
+msgid "Right Parent"
+msgstr "الوالد الايمن"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_res_company_major_account_seperator
+msgid "Seperator"
+msgstr "الفاصل"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_sequence
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_show_cr_de_opening_balance
+msgid "Show Credit/Debuit Opening Balance"
+msgstr "عرض الحسابات المفتوحة دائن/مدين"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_show_detail
+msgid "Show Detailed Accounts"
+msgstr "عرض تفاصيل الحساب"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_date_from
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: major_account
+#: code:addons/major_account/models/company.py:44
+#, python-format
+msgid "Template Max level() is greater than configured max level for this company"
+msgstr "قالب اعلى مستوى() اكبر من اعلى مستوى موجود بالاعدادات"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "To:"
+msgstr "الى"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_total_credit
+msgid "Total Credit"
+msgstr "مجموع الدائن"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_total_debit
+msgid "Total Debit"
+msgstr "مجموع المدين"
+
+#. module: major_account
+#: model:ir.model,name:major_account.model_major_account_report
+msgid "Trail Balance Account Major Report"
+msgstr "تقرير ميزان المراجعة للحساب الرئيسي"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_account_major_balance_type
+msgid "Transaction Status"
+msgstr "حالة المعاملات"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "Transactions"
+msgstr "المعاملات"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_major_account_report_report_level
+msgid "Up To Level"
+msgstr "فوق مستوى"
+
+#. module: major_account
+#: model:ir.actions.server,name:major_account.action_update_major_account_code
+msgid "Update Major Accounts Code"
+msgstr "تحديث كود الحسابات الرئيسية"
+
+#. module: major_account
+#: model:ir.model,name:major_account.model_account_major
+msgid "account.major"
+msgstr "account.major"
+
+#. module: major_account
+#: model:ir.model,name:major_account.model_account_major_level
+msgid "account.major.level"
+msgstr "account.major.level"
+
+#. module: major_account
+#: model:ir.model,name:major_account.model_account_major_template
+msgid "account.major.template"
+msgstr "account.major.template"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.report_major_accounts
+#: model:ir.ui.view,arch_db:major_account.report_show_opening_balance
+msgid "for"
+msgstr "ل"
+
+#. module: major_account
+#: model:ir.model.fields,field_description:major_account.field_res_company_major_account_level_setup
+msgid "major Account Level Setup"
+msgstr "تثبيت مستوى الحساب الرئيسي"
+
+#. module: major_account
+#: model:ir.ui.view,arch_db:major_account.trail_balance_major_account_view
+msgid "or"
+msgstr "أو"
+
+#. module: major_account
+#: model:ir.model,name:major_account.model_report_major_account_report_major_accounts
+msgid "report.major_account.report_major_accounts"
+msgstr "report.major_account.report_major_accounts"
+
+#. module: major_account
+#: model:ir.model,name:major_account.model_report_major_account_report_show_opening_balance
+msgid "report.major_account.report_show_opening_balance"
+msgstr "report.major_account.report_show_opening_balance"
+

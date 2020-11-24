@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Adding Major Account Settings fields int the account Settings form view-->
+        <record id="view_account_major_account_settings_form" model="ir.ui.view">
+            <field name="name">Account Major Settings</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name="major_account" string="Major Accounts">
+                        <button string="Generate Major Accounts" type="object"
+                                name="generate_major_accounts_from_template" class="oe_highlight"/>
+                        <button string="Generate Levels" type="object"
+                                name="generate_levels"/>
+                        <group>
+                            <field name="major_account_prefix"/>
+                            <field name="major_account_seperator"/>
+                            <field name="major_accounts_levels"/>
+                            <field name="account_code_length"/>
+                        </group>
+                        <group>
+                            <field name="major_account_level_setup" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="name" readonly="1"/>
+                                    <field name="code_length"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>
