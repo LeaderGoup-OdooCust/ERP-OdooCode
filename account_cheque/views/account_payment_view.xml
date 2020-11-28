@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <record id="account_payment_inh_cheque_from_view" model="ir.ui.view">
+            <field name="name">account.payment.inherit.cheque.form.view</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <header position="inside">
+                    <button name="%(printing_cheque_wiz_action)d" string="Print Cheque" attrs="{'invisible': [('state', 'not in', ['draft', 'posted'])]}"
+                    context="{'default_payment_id': id, 'default_cheque_id': cheque_id,
+                              'default_bank_id': bank_id, 'default_amount': amount, 'default_currency_id': currency_id,
+                              'default_account_holder_id': partner_id, 'default_cheque_date': cheque_date}" type="action" class="oe_highlight"/>
+                </header>
+                <field name="communication" position="after">
+                    <field name="cheque_id" invisible="1"/>
+                    <field name="cheque_date" attrs="{'invisible':[('payment_method_code', '!=', 'cheque')],
+                    'required':[('payment_method_code', '=', 'cheque')], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="cheque_no" attrs="{'invisible':[('payment_method_code', '!=', 'cheque')],
+                    'required':[('payment_method_code', '=', 'cheque')], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="bank_id" attrs="{'invisible':[('payment_method_code', '!=', 'cheque')],
+                    'required':[('payment_method_code', '=', 'cheque')], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="account_no" attrs="{'invisible':[('payment_method_code', '!=', 'cheque')],
+                    'required':[('payment_method_code', '=', 'cheque')], 'readonly': [('state', '!=', 'draft')]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="account_payment_inh_cheque_inv_from_view" model="ir.ui.view">
+            <field name="name">account.payment.inherit.cheque.inv.form.view</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+            <field name="arch" type="xml">
+                <field name="communication" position="after">
+                    <field name="cheque_id" invisible="1"/>
+                    <field name="cheque_date" attrs="{'invisible':[('payment_method_code', '!=', 'cheque')],
+                    'required':[('payment_method_code', '=', 'cheque')], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="cheque_no" attrs="{'invisible':[('payment_method_code', '!=', 'cheque')],
+                    'required':[('payment_method_code', '=', 'cheque')], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="bank_id" attrs="{'invisible':[('payment_method_code', '!=', 'cheque')],
+                    'required':[('payment_method_code', '=', 'cheque')], 'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="account_no" attrs="{'invisible':[('payment_method_code', '!=', 'cheque')],
+                    'required':[('payment_method_code', '=', 'cheque')], 'readonly': [('state', '!=', 'draft')]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

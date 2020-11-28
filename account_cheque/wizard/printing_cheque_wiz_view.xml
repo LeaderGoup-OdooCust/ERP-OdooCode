@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <record id="printing_cheque_wiz_view" model="ir.ui.view">
+            <field name="name">printing.cheque.wiz.view</field>
+            <field name="model">printing.cheque.wiz</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="printing_template_id" widget="selection"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="cheque_id" invisible="0"/>
+                            <field name="bank_id"/>
+                            <field name="account_holder_id"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="amount" t-options="{'widget': 'monetary', 'display_currency': currency_id}"/>
+                        </group>
+                        <group>
+                            <field name="payment_id" invisible="0"/>
+                            <field name="cheque_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="desc_in" widget="radio" options="{'horizontal': true}"/>
+                        <field name="desc"/>
+                    </group>
+                    <footer>
+                        <button string="Print Cheque" name="print_cheque" type="object" class="btn-primary"/>
+                        <button string="Discard" class="btn-default" special="cancel"/>
+                   </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="printing_cheque_wiz_action" model="ir.actions.act_window">
+            <field name="name">Printing Cheque</field>
+            <field name="res_model">printing.cheque.wiz</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

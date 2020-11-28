@@ -1,0 +1,105 @@
+<odoo>
+  <data>
+
+    <menuitem name="Cheques" id="menu_account_cheque" parent="account.menu_finance" sequence="10"/>
+    <record id="account_cheque_tree_view" model="ir.ui.view">
+      <field name="name">account.cheque.tree.view</field>
+      <field name="model">account.cheque</field>
+      <field name="arch" type="xml">
+        <tree create="false" edit="false">
+          <field name="name"/>
+          <field name="cheque_number"/>
+          <field name="date"/>
+          <field name="beneficiary_id"/>
+          <field name="account_holder_id"/>
+          <field name="journal_id"/>
+          <field name="account_number"/>
+          <field name="bank_id"/>
+          <field name="amount"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="account_cheque_from_view" model="ir.ui.view">
+      <field name="name">account.cheque.form.view</field>
+      <field name="model">account.cheque</field>
+      <field name="arch" type="xml">
+        <form create="false" edit="false">
+          <header>
+            <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+            <button name="%(action_cheque_wiz)d" string="Deposit In Bank"
+                    context="{'default_cheque_id': id, 'default_accounting_date': date, 'default_journal_id':journal_id, 'journal_hide': False, 'src': 'deposit_in_bank'}" class="oe_highlight" states="under_collection,in_bounced" type="action"/>
+            <button name="%(action_cheque_wiz)d" string="Withdrawal" class="oe_highlight" states="out_standing,out_bounced" type="action"
+                    context="{'default_cheque_id': id, 'default_accounting_date': date, 'default_journal_id':journal_id, 'journal_hide': True, 'src': 'withdrawal'}"/>
+            <button name="%(action_cheque_wiz)d" string="Bounced"
+                    context="{'default_cheque_id': id, 'default_accounting_date': date, 'default_journal_id':journal_id, 'journal_hide': True, 'src': 'customer_bounced'}" states="in_bank,under_collection" type="action"/>
+            <button name="%(action_cheque_wiz)d" string="Bounced"
+                    context="{'default_cheque_id': id, 'default_accounting_date': date, 'default_journal_id':journal_id, 'journal_hide': True, 'src': 'vendor_bounced'}" states="withdrawal,out_standing" type="action"/>
+            <button name="%(action_cheque_wiz)d" string="Return To Account"
+                    context="{'default_cheque_id': id, 'default_accounting_date': date, 'default_journal_id':journal_id, 'journal_hide': True, 'src': 'in_return'}" states="in_bank,under_collection" type="action"/>
+            <button name="%(action_cheque_wiz)d" string="Return To Account"
+                    context="{'default_cheque_id': id, 'default_accounting_date': date, 'default_journal_id':journal_id, 'journal_hide': True, 'src': 'out_return'}" states="withdrawal,out_standing" type="action"/>
+            <button name="action_to_done" string="Done" class="oe_highlight" states="withdrawal,in_bank,in_bounced,out_bounced" type="object"/>
+          </header>
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <lable for="name"/>
+                <field name="name"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="cheque_type" invisible="1"/>
+                <field name="account_holder_id"/>
+                <field name="date"/>
+                <field name="bank_id"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="amount" t-options="{'widget': 'monetary', 'display_currency': currency_id}"/>
+              </group>
+              <group>
+                <field name="beneficiary_id"/>
+                <field name="payment_date"/>
+                <field name="journal_id"/>
+                <field name="account_number"/>
+                <field name="cheque_number"/>
+              </group>
+            </group>
+            <group>
+              <field name="memo"/>
+            </group>
+            <field name="cheque_line_ids">
+              <tree>
+                <field name="datetime"/>
+                <field name="desc"/>
+                <field name="move_id"/>
+              </tree>
+            </field>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_account_inbound_cheque" model="ir.actions.act_window">
+      <field name="name">Accounting Inbound Cheque</field>
+      <field name="res_model">account.cheque</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[('cheque_type', '=', 'inbound')]</field>
+    </record>
+
+    <menuitem name="Inbound Cheque" id="menu_account_inbound_cheque" parent="menu_account_cheque" action="action_account_inbound_cheque" sequence="1" groups="account.group_account_manager"/>
+
+    <record id="action_account_outbound_cheque" model="ir.actions.act_window">
+      <field name="name">Accounting Outbound Cheque</field>
+      <field name="res_model">account.cheque</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[('cheque_type', '=', 'outbound')]</field>
+    </record>
+
+    <menuitem name="Outbound Cheque" id="menu_account_outbound_cheque" parent="menu_account_cheque" action="action_account_outbound_cheque" sequence="2" groups="account.group_account_manager"/>
+
+  </data>
+</odoo>

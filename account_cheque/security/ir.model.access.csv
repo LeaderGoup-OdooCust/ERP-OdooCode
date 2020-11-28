@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+account_cheque_access_all,account.cheque.access.all,model_account_cheque,,1,1,1,0
+account_cheque_line_access_all,account.cheque.line.access.all,model_account_cheque_line,,1,1,1,0
+cheque_user_template_access_all,cheque.user.template.access.all,model_cheque_user_template,,1,1,1,0

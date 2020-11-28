@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record id="account_journal_inh_cheque_from_view" model="ir.ui.view">
+            <field name="name">account.journal.inherit.cheque.form.view</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Cheque Setting" attrs="{'invisible': [('type', '!=', 'bank')]}">
+                        <group>
+                            <group>
+                                <field name="is_inbound_cheque"/>
+                                <field name="cheque_no"/>
+                            </group>
+                            <group>
+                                <field name="is_outbound_cheque"/>
+                            </group>
+                        </group>
+                        <group string="Accounts" attrs="{'invisible': [('is_inbound_cheque', '=', False),('is_outbound_cheque', '=', False)]}">
+                            <group>
+                                <field name="under_collection_account_id" attrs="{'invisible': [('is_inbound_cheque', '!=', True)],
+                               'required': [('is_inbound_cheque', '=', True)]}"/>
+                                <field name="out_standing_account_id" attrs="{'invisible': [('is_outbound_cheque', '!=', True)],
+                               'required': [('is_outbound_cheque', '=', True)]}"/>
+                            </group>
+                            <group>
+                                <field name="customer_bounced_account_id" attrs="{'invisible': [('is_inbound_cheque', '!=', True)],
+                               'required': [('is_inbound_cheque', '=', True)]}"/>
+                                <field name="vendor_bounced_account_id" attrs="{'invisible': [('is_outbound_cheque', '!=', True)],
+                               'required': [('is_outbound_cheque', '=', True)]}"/>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,113 @@
+<odoo>
+    <data>
+        <record id="view_res_bank_inh_customize_form" model="ir.ui.view">
+            <field name="name">res.bank.inh.customize.form</field>
+            <field name="model">res.bank</field>
+            <field name="inherit_id" ref="base.view_res_bank_form"/>
+            <field name="arch" type="xml">
+                    <form position="inside">
+                        <notebook>
+                            <page string="Cheque Print Setting">
+                                <group>
+                                    <group>
+                                        <label for="cheque_w"/>
+                                        <div class="o_row">
+                                            <field name="cheque_w"/>
+                                            cm
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <label for="cheque_h"/>
+                                        <div class="o_row">
+                                            <field name="cheque_h"/>
+                                            cm
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Account Holder">
+                                        <label for="account_holder_w"/>
+                                        <div class="o_row">
+                                            <field name="account_holder_w"/>mm
+                                        </div>
+                                        <label for="account_holder_h"/>
+                                        <div class="o_row">
+                                            <field name="account_holder_h"/>mm
+                                        </div>
+                                        <label for="account_holder_x"/>
+                                        <div class="o_row">
+                                            <field name="account_holder_x"/>mm
+                                        </div>
+                                        <label for="account_holder_y"/>
+                                        <div class="o_row">
+                                            <field name="account_holder_y"/>mm
+                                        </div>
+                                    </group>
+                                    <group string="Date">
+                                        <label for="date_w"/>
+                                        <div class="o_row">
+                                            <field name="date_w"/>mm
+                                        </div>
+                                        <label for="date_h"/>
+                                        <div class="o_row">
+                                            <field name="date_h"/>mm
+                                        </div>
+                                        <label for="date_x"/>
+                                        <div class="o_row">
+                                            <field name="date_x"/>mm
+                                        </div>
+                                        <label for="date_y"/>
+                                        <div class="o_row">
+                                            <field name="date_y"/>mm
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Amount">
+                                        <label for="amount_w"/>
+                                        <div class="o_row">
+                                            <field name="amount_w"/>mm
+                                        </div>
+                                        <label for="amount_h"/>
+                                        <div class="o_row">
+                                            <field name="amount_h"/>mm
+                                        </div>
+                                        <label for="amount_x"/>
+                                        <div class="o_row">
+                                            <field name="amount_x"/>mm
+                                        </div>
+                                        <label for="amount_y"/>
+                                        <div class="o_row">
+                                            <field name="amount_y"/>mm
+                                        </div>
+                                    </group>
+                                    <group string="Description">
+                                        <label for="desc_w"/>
+                                        <div class="o_row">
+                                            <field name="desc_w"/>mm
+                                        </div>
+                                        <label for="desc_h"/>
+                                        <div class="o_row">
+                                            <field name="desc_h"/>mm
+                                        </div>
+                                        <label for="desc_x"/>
+                                        <div class="o_row">
+                                            <field name="desc_x"/>mm
+                                        </div>
+                                        <label for="desc_y"/>
+                                        <div class="o_row">
+                                            <field name="desc_y"/>mm
+                                        </div>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </form>
+            </field>
+        </record>
+
+        <menuitem name="Banks" id="menu_res_bank_customize" parent="menu_account_cheque" action="base.action_res_bank_form" sequence="3" groups="account.group_account_manager"/>
+    </data>
+</odoo>
+
+

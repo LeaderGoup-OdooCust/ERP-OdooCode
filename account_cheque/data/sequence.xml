@@ -1,0 +1,21 @@
+<odoo>
+    <data noupdate="1">
+        <record id="sequence_inbound_cheque" model="ir.sequence">
+            <field name="name">Inbound Cheque Seq</field>
+            <field name="code">in.cheque</field>
+            <field name="prefix">IN.CHEQUE/</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <record id="sequence_outbound_cheque" model="ir.sequence">
+            <field name="name">Outbound Cheque Seq</field>
+            <field name="code">out.cheque</field>
+            <field name="prefix">OUT.CHEQUE/</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+</odoo>

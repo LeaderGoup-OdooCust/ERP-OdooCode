@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+
+        <report id="action_print_cheque_report"
+            model="printing.cheque.wiz"
+            string="Print Cheque"
+            report_type="qweb-pdf"
+            name="account_cheque.printing_cheque_template"
+            file="account_cheque.printing_cheque_template"/>
+
+        <template id="printing_cheque_template">
+             <t t-call="web.basic_layout">
+                <div class="page" t-att-style="'width:' + str(data['template_data']['cheque_w'])+ 'cm;' + 'height:' + str(data['template_data']['cheque_h'])+ 'cm;border:1px solid black;'">
+                    <div class="oe_structure"/>
+                    <!-- Holder-->
+                    <div t-att-style="'width:' + str(data['template_data']['account_holder_w'])+ 'mm;'
+                     + 'height:' + str(data['template_data']['account_holder_h'])+ 'mm;'
+                     + 'margin-left:' + str(data['template_data']['account_holder_y'])+ 'mm;'
+                     + 'margin-top:' + str(data['template_data']['account_holder_x'])+ 'mm;'">
+                        <t t-esc="data['wiz_data']['account_holder_id'][1]"/>
+                    </div>
+                    <!-- Date -->
+                    <div t-att-style="'width:' + str(data['template_data']['date_w'])+ 'mm;'
+                     + 'height:' + str(data['template_data']['date_h'])+ 'mm;'
+                     + 'margin-left:' + str(data['template_data']['date_y'])+ 'mm;'
+                     + 'margin-top:' + str(data['template_data']['date_x'])+ 'mm;'">
+                        <t t-esc="data['wiz_data']['cheque_date']"/>
+                    </div>
+                    <!-- Amount -->
+                    <div t-att-style="'width:' + str(data['template_data']['amount_w'])+ 'mm;'
+                     + 'height:' + str(data['template_data']['amount_h'])+ 'mm;'
+                     + 'margin-left:' + str(data['template_data']['amount_y'])+ 'mm;'
+                     + 'margin-top:' + str(data['template_data']['amount_x'])+ 'mm;'">
+                        <t t-esc="data['wiz_data']['amount']"/>
+                    </div>
+                    <!-- Description -->
+                    <div t-att-style="'width:' + str(data['template_data']['desc_w'])+ 'mm;'
+                     + 'height:' + str(data['template_data']['desc_h'])+ 'mm;'
+                     + 'margin-left:' + str(data['template_data']['desc_y'])+ 'mm;'
+                     + 'margin-top:' + str(data['template_data']['desc_x'])+ 'mm;'">
+                        <t t-esc="data['wiz_data']['desc']"/>
+                    </div>
+                </div>
+                </t>
+        </template>
+    </data>
+</odoo>
